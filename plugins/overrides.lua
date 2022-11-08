@@ -27,6 +27,7 @@ M.mason = {
     "php-cs-fixer",
     "phpcs",
     "prettierd",
+    "tailwindcss-language-server",
   },
 }
 
