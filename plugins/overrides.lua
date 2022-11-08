@@ -46,4 +46,11 @@ M.nvimtree = {
   },
 }
 
+-- ui config
+M.ui = {
+  statusline = {
+    separator_style = "arrow", -- default/round/block/arrow
+  },
+}
+
 return M

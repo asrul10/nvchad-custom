@@ -41,6 +41,9 @@ return {
     end,
   },
 
+  ["NvChad/ui"] = {
+    override_options = overrides.ui,
+  },
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }
