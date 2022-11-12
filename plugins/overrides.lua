@@ -10,6 +10,7 @@ M.treesitter = {
     -- TypeScript, JavaScript
     "javascript",
     "typescript",
+    "tsx",
 
     -- PHP
     "php",
