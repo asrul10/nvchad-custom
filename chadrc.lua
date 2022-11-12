@@ -3,6 +3,14 @@ local M = {}
 M.ui = {
   theme_toggle = { "onedark", "one_light" },
   theme = "monekai",
+  changed_themes = {
+    monekai = {
+      base_16 = {
+        -- styling https://github.com/chriskempson/base16/blob/main/styling.md
+        base00 = "#262626",
+      },
+    },
+  },
 }
 
 M.plugins = require "custom.plugins"
