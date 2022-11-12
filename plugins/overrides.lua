@@ -17,6 +17,7 @@ M.treesitter = {
 
     -- Go
     "go",
+    "gomod",
 
     -- Vim
     "vim",
@@ -24,6 +25,12 @@ M.treesitter = {
 
     -- Json
     "json",
+
+    -- Markdown
+    "markdown",
+
+    -- SQL
+    "sql",
   },
 }
 
