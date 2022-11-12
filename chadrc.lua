@@ -7,7 +7,7 @@ M.ui = {
     monekai = {
       base_16 = {
         -- styling https://github.com/chriskempson/base16/blob/main/styling.md
-        base00 = "#262626",
+        base00 = "#282828",
       },
     },
   },
