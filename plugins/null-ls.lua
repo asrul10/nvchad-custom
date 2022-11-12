@@ -7,24 +7,23 @@ end
 local b = null_ls.builtins
 
 local sources = {
+  -- Lua
+  b.formatting.stylua,
 
-  -- webdev stuff
+  -- TypeScript, JavaScript
   b.formatting.deno_fmt,
   b.code_actions.eslint,
-  b.formatting.prettierd,
+
+  -- PHP
   b.diagnostics.phpcs,
   b.formatting.phpcsfixer,
 
-  -- Lua
-  b.formatting.stylua,
+  -- Go
+  b.formatting.goimports,
 
   -- Shell
   b.formatting.shfmt,
   b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
-
-  -- cpp
-  b.formatting.clang_format,
-  b.formatting.rustfmt,
 }
 
 null_ls.setup {

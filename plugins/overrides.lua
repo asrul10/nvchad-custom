@@ -2,32 +2,58 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
-    "lua",
+    -- HTML CSS
     "html",
     "css",
+    "scss",
+
+    -- TypeScript, JavaScript
+    "javascript",
     "typescript",
-    "c",
+
+    -- PHP
+    "php",
+
+    -- Go
+    "go",
+
+    -- Vim
+    "vim",
+    "lua",
+
+    -- Json
+    "json",
   },
 }
 
 M.mason = {
   ensure_installed = {
-    -- lua stuff
+    -- Lua
     "lua-language-server",
     "stylua",
 
-    -- web dev stuff
+    -- HTML CSS
     "css-lsp",
     "html-lsp",
-    "typescript-language-server",
+    "tailwindcss-language-server",
+
+    -- TypeScript, JavaScript
     "deno",
+    "typescript-language-server",
+    "eslint-lsp",
+
+    -- Go
+    "gopls",
+    "goimports",
+
+    -- PHP
     "intelephense",
-    "eslint_d",
     "php-cs-fixer",
     "phpcs",
-    "prettierd",
-    "tailwindcss-language-server",
+
+    -- Shell
+    "shfmt",
+    "shellcheck",
   },
 }
 
