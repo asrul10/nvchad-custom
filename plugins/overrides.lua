@@ -88,4 +88,28 @@ M.ui = {
   },
 }
 
+-- telescope
+M.telescope = {
+  defaults = {
+    prompt_prefix = "  ",
+    selection_caret = "  ",
+    entry_prefix = "  ",
+    layout_config = {
+      width = 0.50,
+      height = 0.80,
+    },
+  },
+  pickers = {
+    find_files = {
+      previewer = false,
+    },
+    live_grep = {
+      previewer = false,
+    },
+    -- find_files = {
+    --   theme = "dropdown",
+    -- },
+  },
+}
+
 return M

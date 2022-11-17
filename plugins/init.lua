@@ -44,6 +44,11 @@ return {
   ["NvChad/ui"] = {
     override_options = overrides.ui,
   },
+
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = overrides.telescope,
+  },
+
   -- remove plugin
   -- ["hrsh7th/cmp-path"] = false,
 }
