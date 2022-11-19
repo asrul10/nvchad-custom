@@ -7,7 +7,7 @@ local servers = {
   -- HTML CSS
   "html",
   "cssls",
-  "tailwindcss",
+  -- "tailwindcss",
 
   -- TypeScript, JavaScript
   "tsserver",
@@ -26,3 +26,9 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+lspconfig["tailwindcss"].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "typescriptreact" },
+}
