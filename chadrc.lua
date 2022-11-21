@@ -3,6 +3,7 @@ local M = {}
 M.ui = {
   theme_toggle = { "onedark", "one_light" },
   theme = "monekai",
+  transparency = true,
   changed_themes = {
     -- https://github.com/NvChad/base46/blob/master/lua/base46/themes/monekai.lua
     monekai = {
