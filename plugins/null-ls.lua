@@ -11,8 +11,8 @@ local sources = {
   b.formatting.stylua,
 
   -- TypeScript, JavaScript
+  b.code_actions.eslint_d,
   b.formatting.deno_fmt,
-  b.code_actions.eslint,
 
   -- PHP
   b.diagnostics.phpcs,

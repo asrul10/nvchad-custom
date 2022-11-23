@@ -11,6 +11,7 @@ M.treesitter = {
     "javascript",
     "typescript",
     "tsx",
+    -- "tailwindcss-language-server",
 
     -- PHP
     "php",
@@ -43,12 +44,11 @@ M.mason = {
     -- HTML CSS
     "css-lsp",
     "html-lsp",
-    "tailwindcss-language-server",
 
     -- TypeScript, JavaScript
     "deno",
     "typescript-language-server",
-    "eslint-lsp",
+    "eslint_d",
 
     -- Go
     "gopls",

@@ -4,17 +4,18 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 local servers = {
-  -- HTML CSS
+  -- HTML
   "html",
+
+  -- CSS
   "cssls",
-  -- "tailwindcss",
 
   -- TypeScript, JavaScript
   "tsserver",
+  -- "tailwindcss", -- commented because it is slow
 
   -- PHP
   "intelephense",
-  "eslint",
 
   -- Go
   "gopls",
@@ -27,8 +28,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig["tailwindcss"].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  filetypes = { "typescriptreact" },
-}
+-- lspconfig["tailwindcss"].setup {
+--   on_attach = on_attach,
+--   capabilities = capabilities,
+--   filetypes = { "typescriptreact" },
+-- }
