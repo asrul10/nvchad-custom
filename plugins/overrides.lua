@@ -36,6 +36,14 @@ M.treesitter = {
 }
 
 M.mason = {
+  ui = {
+    icons = {
+      package_pending = " ",
+      package_installed = " ",
+      package_uninstalled = " ",
+    },
+  },
+
   ensure_installed = {
     -- Lua
     "lua-language-server",
@@ -85,6 +93,12 @@ M.nvimtree = {
 M.ui = {
   statusline = {
     separator_style = "arrow", -- default/round/block/arrow
+  },
+  tabufline = {
+    lazyload = false, -- to show tabufline by default
+    overriden_modules = function()
+      return require "custom.plugins.tabufline"
+    end,
   },
 }
 
