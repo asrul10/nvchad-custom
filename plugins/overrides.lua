@@ -95,7 +95,6 @@ M.ui = {
     separator_style = "arrow", -- default/round/block/arrow
   },
   tabufline = {
-    lazyload = false, -- to show tabufline by default
     overriden_modules = function()
       return require "custom.plugins.tabufline"
     end,
