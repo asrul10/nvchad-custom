@@ -92,7 +92,10 @@ M.nvimtree = {
 -- ui config
 M.ui = {
   statusline = {
-    separator_style = "arrow", -- default/round/block/arrow
+    separator_style = "block",
+    overriden_modules = function()
+      return require "custom.plugins.statusline"
+    end,
   },
   tabufline = {
     overriden_modules = function()
@@ -111,6 +114,7 @@ M.telescope = {
       width = 0.50,
       height = 0.80,
     },
+    borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
   },
   pickers = {
     find_files = {
@@ -119,9 +123,9 @@ M.telescope = {
     live_grep = {
       previewer = false,
     },
-    -- find_files = {
-    --   theme = "dropdown",
-    -- },
+    buffers = {
+      previewer = false,
+    },
   },
 }
 

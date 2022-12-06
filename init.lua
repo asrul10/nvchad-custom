@@ -6,15 +6,18 @@ g.toggle_theme_icon = ""
 opt.number = true
 opt.numberwidth = 1
 opt.relativenumber = true
+opt.colorcolumn = "100"
 
+-- [[ Highlight on yank ]]
+local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = vim.api.nvim_create_augroup('highlight_yank', {}),
-  desc = "Hightlight selection on yank",
-  pattern = "*",
   callback = function()
-    vim.highlight.on_yank { higroup = "IncSearch", timeout = 500 }
+    vim.highlight.on_yank()
   end,
+  group = highlight_group,
+  pattern = "*",
 })
+
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
 --   pattern = "*",
