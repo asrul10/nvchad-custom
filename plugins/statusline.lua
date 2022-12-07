@@ -62,14 +62,8 @@ return {
   cursor_position = function()
     local current_line = fn.line "."
     local total_line = fn.line "$"
-    local text = math.modf((current_line / total_line) * 100) .. tostring "%%"
-
-    text = (current_line == 1 and "Top") or text
-    text = (current_line == total_line and "Bot") or text
-
-    return "%#St_pos_text#" .. " " .. text .. " "
+    return "%#St_pos_text#" .. " " .. current_line .. "/" .. total_line .. " "
   end,
-
   LSP_Diagnostics = function()
     if not rawget(vim, "lsp") then
       return ""
@@ -80,12 +74,12 @@ return {
     local hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
     local info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
 
-    errors = (errors and errors > 0) and ("%#St_lspError#" .. errors .. " ") or ""
-    warnings = (warnings and warnings > 0) and ("%#St_lspWarning#" .. warnings .. " ") or ""
-    hints = (hints and hints > 0) and ("%#St_lspHints#" .. hints .. " ") or ""
-    info = (info and info > 0) and ("%#St_lspInfo#" .. info .. " ") or ""
+    local serrors = (errors and errors > 0) and ("%#St_lspError#" .. errors .. " ") or ""
+    local swarnings = (warnings and warnings > 0) and ("%#St_lspWarning#" .. warnings .. " ") or ""
+    local shints = (hints and hints > 0) and ("%#St_lspHints#" .. hints .. " ") or ""
+    local sinfo = (info and info > 0) and ("%#St_lspInfo#" .. info .. " ") or ""
 
-    return errors .. warnings .. hints .. info
+    return serrors .. swarnings .. shints .. sinfo
   end,
   LSP_status = function()
     if rawget(vim, "lsp") then

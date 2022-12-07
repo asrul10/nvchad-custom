@@ -3,8 +3,7 @@ local opt = vim.opt
 local g = vim.g
 
 g.toggle_theme_icon = ""
-opt.number = true
-opt.numberwidth = 1
+opt.number = false
 opt.relativenumber = true
 opt.colorcolumn = "100"
 
