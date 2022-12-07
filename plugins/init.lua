@@ -44,4 +44,8 @@ return {
   ["lewis6991/gitsigns.nvim"] = {
     override_options = overrides.gitsigns,
   },
+
+  ["hrsh7th/nvim-cmp"] = {
+    override_options = overrides.cmp,
+  },
 }

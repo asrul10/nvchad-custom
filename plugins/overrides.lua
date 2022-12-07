@@ -1,5 +1,18 @@
 local M = {}
 
+local function border(hl_name)
+  return {
+    { "┌", hl_name },
+    { "─", hl_name },
+    { "┐", hl_name },
+    { "│", hl_name },
+    { "┘", hl_name },
+    { "─", hl_name },
+    { "└", hl_name },
+    { "│", hl_name },
+  }
+end
+
 M.treesitter = {
   ensure_installed = {
     -- HTML CSS
@@ -136,6 +149,19 @@ M.gitsigns = {
     change = { hl = "DiffChange", text = "▌", numhl = "GitSignsChangeNr" },
     delete = { hl = "DiffDelete", text = "━", numhl = "GitSignsDeleteNr" },
     topdelete = { hl = "DiffDelete", text = "━", numhl = "GitSignsDeleteNr" },
+  },
+}
+
+-- cmp
+M.cmp = {
+  window = {
+    completion = {
+      border = border "CmpBorder",
+      winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = border "CmpDocBorder",
+    },
   },
 }
 
