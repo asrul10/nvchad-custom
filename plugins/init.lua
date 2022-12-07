@@ -40,4 +40,8 @@ return {
   ["nvim-telescope/telescope.nvim"] = {
     override_options = overrides.telescope,
   },
+
+  ["lewis6991/gitsigns.nvim"] = {
+    override_options = overrides.gitsigns,
+  },
 }
