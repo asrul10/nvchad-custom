@@ -38,7 +38,7 @@ return {
     return current_mode .. mode_sep1
   end,
   fileInfo = function()
-    local filename = (fn.expand "%" == "" and "Empty ") or fn.expand "%:t"
+    local filename = (fn.expand "%" == "" and "Empty ") or fn.expand "%:~:."
     return "%#St_file_info#" .. " " .. filename .. " " .. "%#St_file_sep#"
   end,
   git = function()
@@ -56,13 +56,13 @@ return {
     return "%#St_gitIcons#" .. branch_name .. added .. changed .. removed
   end,
   cwd = function()
-    local dir_name = "%#St_cwd_text#" .. " " .. fn.fnamemodify(fn.getcwd(), ":t") .. " "
+    local dir_name = "%#St_cwd_text#" .. " " .. fn.fnamemodify(fn.getcwd(), ":t")
     return (vim.o.columns > 85 and ("%#St_cwd_sep#" .. dir_name)) or ""
   end,
   cursor_position = function()
     local current_line = fn.line "."
-    local total_line = fn.line "$"
-    return "%#St_pos_text#" .. " " .. current_line .. "/" .. total_line .. " "
+    local current_column = fn.col "."
+    return "%#St_pos_text#" .. " " .. current_line .. ":" .. current_column .. " "
   end,
   LSP_Diagnostics = function()
     if not rawget(vim, "lsp") then
@@ -84,7 +84,11 @@ return {
   LSP_status = function()
     if rawget(vim, "lsp") then
       for _, client in ipairs(vim.lsp.get_active_clients()) do
-        if client.attached_buffers[vim.api.nvim_get_current_buf()] then
+        if
+          client.name ~= "null-ls"
+          and client.name ~= "copilot"
+          and client.attached_buffers[vim.api.nvim_get_current_buf()]
+        then
           return (vim.o.columns > 100 and "%#St_LspStatus#" .. client.name .. " ") or ""
         end
       end
