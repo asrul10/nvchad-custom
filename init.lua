@@ -5,7 +5,7 @@ local g = vim.g
 g.toggle_theme_icon = ""
 opt.number = false
 opt.relativenumber = true
-opt.colorcolumn = "100"
+opt.colorcolumn = "85"
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
@@ -16,6 +16,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
+
+vim.cmd [[imap <silent><script><expr> <C-a> copilot#Accept("\<CR>")]]
+vim.g.copilot_no_tab_map = true
 
 -- Auto resize panes when resizing nvim window
 -- autocmd("VimResized", {
