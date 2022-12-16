@@ -1,11 +1,10 @@
 local M = {}
 
 M.general = {
-  n = {
-    -- [";"] = { ":", "command mode", opts = { nowait = true } },
+  v = {
+    ["J"] = { ":m '>+1<CR>gv=gv", "move line down" },
+    ["K"] = { ":m '<-2<CR>gv=gv", "move line up" },
   },
 }
-
--- more keybinds!
 
 return M
