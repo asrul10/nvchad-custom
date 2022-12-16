@@ -6,6 +6,7 @@ g.toggle_theme_icon = ""
 opt.number = false
 opt.relativenumber = true
 opt.colorcolumn = "85"
+opt.scrolloff = 8
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
@@ -17,6 +18,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   pattern = "*",
 })
 
+-- [[ Copilot config ]]
 vim.cmd [[imap <silent><script><expr> <C-a> copilot#Accept("\<CR>")]]
 vim.g.copilot_no_tab_map = true
 
