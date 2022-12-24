@@ -26,8 +26,8 @@ M.treesitter = {
     "tsx",
     -- "tailwindcss-language-server",
 
-    -- PHP
-    "php",
+    -- Rust
+    "rust",
 
     -- Go
     "go",
@@ -37,11 +37,20 @@ M.treesitter = {
     "vim",
     "lua",
 
+    -- PHP
+    "php",
+
     -- Json
     "json",
 
     -- Markdown
     "markdown",
+
+    -- Yaml
+    "yaml",
+
+    -- Docker
+    "dockerfile",
 
     -- SQL
     "sql",
@@ -71,18 +80,30 @@ M.mason = {
     "typescript-language-server",
     "eslint_d",
 
+    -- Rust
+    "rust-analyzer",
+
     -- Go
     "gopls",
     "goimports",
+
+    -- Shell
+    "shfmt",
+    "shellcheck",
 
     -- PHP
     "intelephense",
     "php-cs-fixer",
     "phpcs",
 
-    -- Shell
-    "shfmt",
-    "shellcheck",
+    -- Yaml
+    "yaml-language-server",
+
+    -- Json
+    "json-lsp",
+
+    -- Docker
+    "dockerfile-language-server",
   },
 }
 

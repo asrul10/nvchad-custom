@@ -24,11 +24,23 @@ local servers = {
   "tsserver",
   -- "tailwindcss", -- commented because it is slow
 
-  -- PHP
-  "intelephense",
+  -- Rust
+  "rust_analyzer",
 
   -- Go
   "gopls",
+
+  -- Yaml
+  "yamlls",
+
+  -- PHP
+  "intelephense",
+
+  -- JSON
+  "jsonls",
+
+  -- Docker
+  "dockerls"
 }
 
 for _, lsp in ipairs(servers) do
