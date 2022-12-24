@@ -82,6 +82,7 @@ M.mason = {
 
     -- Rust
     "rust-analyzer",
+    "rustfmt",
 
     -- Go
     "gopls",
