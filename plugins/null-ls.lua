@@ -14,9 +14,8 @@ local sources = {
   b.code_actions.eslint_d,
   b.formatting.deno_fmt,
 
-  -- PHP
-  b.diagnostics.phpcs,
-  b.formatting.phpcsfixer,
+  -- Rust
+  b.formatting.rustfmt,
 
   -- Go
   b.formatting.goimports,
@@ -24,6 +23,10 @@ local sources = {
   -- Shell
   b.formatting.shfmt,
   b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
+
+  -- PHP
+  b.diagnostics.phpcs,
+  b.formatting.phpcsfixer,
 }
 
 null_ls.setup {
