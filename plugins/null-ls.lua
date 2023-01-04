@@ -5,6 +5,15 @@ if not present then
 end
 
 local b = null_ls.builtins
+local extensions = {
+  javascript = "js",
+  javascriptreact = "jsx",
+  json = "json",
+  jsonc = "jsonc",
+  markdown = "md",
+  typescript = "ts",
+  typescriptreact = "tsx",
+}
 
 local sources = {
   -- Lua
@@ -12,7 +21,20 @@ local sources = {
 
   -- TypeScript, JavaScript
   b.code_actions.eslint_d,
-  b.formatting.deno_fmt,
+  b.formatting.deno_fmt.with {
+    args = function(params)
+      return {
+        "fmt",
+        "-",
+        "--ext",
+        extensions[params.ft],
+        "--options-line-width",
+        80,
+        "--options-indent-width",
+        vim.bo[params.bufnr].shiftwidth,
+      }
+    end,
+  },
 
   -- Rust
   b.formatting.rustfmt,
